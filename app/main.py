@@ -6,6 +6,11 @@ from . import schemas
 from . import crud
 
 
+
+# Nicolas
+from pydantic import BaseModel
+from datetime import date
+
 app = FastAPI()
 
 
@@ -20,3 +25,19 @@ def crear_producto(
 ):
     return crud.crear_producto(db, producto)
 
+
+#Nicolas
+class Venta(BaseModel):
+    fecha_venta: date
+    id_usuario: int
+
+
+@app.post("/ventas")
+def crear_venta(venta: Venta):
+    return {
+        "mensaje": "Venta registrada correctamente",
+        "fecha_venta": venta.fecha_venta,
+        "id_usuario": venta.id_usuario
+    }
+    
+    
