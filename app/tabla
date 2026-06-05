@@ -1,0 +1,10 @@
+CREATE TABLE venta (
+    id_venta SERIAL PRIMARY KEY,
+    fecha_venta DATE NOT NULL,
+    id_usuario INTEGER NOT NULL
+);
+
+CREATE TABLE producto (
+    id_producto = SERIAL PRIMARY KEY,
+    nombre = VARCHAR (50) NOT NULL,
+    precio = CHAR(10) NOT NULL);
