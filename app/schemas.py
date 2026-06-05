@@ -16,7 +16,7 @@ class ProductoResponse(ProductoBase):
         
         
 class VentaBase(BaseModel):
-    fecha: date
+    fecha_venta: date
     id_usuario:int
 
 class VentaResponse(VentaBase):
@@ -24,6 +24,24 @@ class VentaResponse(VentaBase):
 
 class VentaCreate(VentaBase):
     id_venta:int
+    
+    class Config:
+        from_attributes = True
+        
+        
+
+
+class UsuarioBase(BaseModel):
+    nombre_usuario: str
+    apellido_usuario: str
+    id_rol: int
+    contraseña: str
+
+class UsuarioResponse(UsuarioBase):
+    pass
+
+class UsuarioCreate(UsuarioBase):
+    id_usuario:int
     
     class Config:
         from_attributes = True

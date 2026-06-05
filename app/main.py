@@ -31,5 +31,14 @@ def crear_venta(
 ):
     return crud.crear_venta(db, venta)
 
+
+#camilo
+
+@app.post("/usuario", response_model=schemas.UsuarioResponse)
+def crear_usuario(
+    usuario= schemas.UsuarioCreate,
+    db: Session = Depends(get_db)
+):
+    return crud.crear_usuario(db, usuario)
     
     
